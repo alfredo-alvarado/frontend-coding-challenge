@@ -1,0 +1,7 @@
+.RoundedBadge {        
+    width: 7.375rem;
+    height: 7.375rem;
+    padding-top: 2.938rem;
+    font-size: 1.5rem;
+    border-radius: 100%;
+}
