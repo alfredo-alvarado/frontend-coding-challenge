@@ -1,0 +1,23 @@
+.SearchBar {
+    margin-bottom: 4.625rem;
+}
+
+.SearchBar__input-group {
+    display: flex;
+}
+
+.SearchBar__input-group input {
+    height: 3.75rem;
+    margin-right: 0.5rem;
+}
+
+.SearchBar__input-group label {
+    font-size: 0.875rem;
+}
+
+@media (min-width: 48em) {
+
+    .SearchBar {
+        width: calc(50% - 1rem);
+    }
+}

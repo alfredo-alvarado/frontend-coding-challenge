@@ -3,11 +3,14 @@ import { Button } from 'react-bootstrap';
 import classes from './SquaredButton.module.css';
 
 interface Props {
-    clicked: () => void,
-    children: ReactNode
+    clicked?: () => void,
+    children: ReactNode,
+    type: string
 }
 
 const SquaredButton = (props: Props) => {
+
+    const {clicked, type, children} = props;
 
     const btnClasses = [
         classes.SquaredButton,
@@ -15,8 +18,12 @@ const SquaredButton = (props: Props) => {
     ];
 
     return (
-        <Button className={btnClasses.join(' ')} onClick={props.clicked}>
-            { props.children }
+        <Button
+            type={type} 
+            className={btnClasses.join(' ')} 
+            onClick={clicked}
+        >
+            { children }
         </Button>
     );
 };

@@ -1,11 +1,18 @@
 import React, { useEffect, useState } from 'react'
 import { OutdoorsyListResponse } from '../../models/OutdoorsyListModel';
 import { getRentalList } from '../../services/OutdoorsyService';
+import SearchBar from '../../components/CampervansList/SearchBar';
+import { Container, Row } from 'react-bootstrap';
+import SquaredButton from '../../components/Custom/SquaredButton';
+import CampervansItem from '../../components/CampervansList/CampervansItem';
+import classes from './CampervansList.module.css';
 
 const CampervansList = () => {
 
     const [results, setResults] = useState<null | OutdoorsyListResponse>(null);
     const [error, setError] = useState<string>('');
+
+    let content = <>Ok</>;
 
     const updateResultsHandler = async () => {
         
@@ -37,16 +44,37 @@ const CampervansList = () => {
     }
 
     if (results) {
-        return (
-            <h1>
-                Done!
-            </h1>
-        );
+        content = (
+            <>
+                <CampervansItem />
+                <CampervansItem />
+            </>
+        );   
     }
 
     return (
-        <div>
-            Loading
+        <div className={classes.CampervansList}>
+            <div className={classes.CampervansList__title}>
+                Campervans
+            </div>
+            <SearchBar
+                formSubmitted={() => {}}
+                inputChanged={()=>{}}
+                inputValue={''} 
+            />
+            <Container className={classes.CampervansList__body} fluid>
+                <Row noGutters>                    
+                    { content }
+                </Row>
+            </Container>
+            <div className="text-center">
+                <SquaredButton
+                    clicked={() => {}}
+                    type="button"
+                >
+                    Load more
+                </SquaredButton>
+            </div>
         </div>
     );
 }
