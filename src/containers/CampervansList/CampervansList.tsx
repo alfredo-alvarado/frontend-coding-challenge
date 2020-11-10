@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { OutdoorsyListResponse } from '../../models/OutdoorsyListModel';
 import { getRentalList } from '../../services/OutdoorsyService';
 import SearchBar from '../../components/CampervansList/SearchBar';
-import { Container, Row } from 'react-bootstrap';
+import { Container, Row, Col } from 'react-bootstrap';
 import SquaredButton from '../../components/Custom/SquaredButton';
 import CampervansItem from '../../components/CampervansList/CampervansItem';
 import classes from './CampervansList.module.css';
@@ -29,6 +29,28 @@ const CampervansList = () => {
         }
     };
 
+    const buildCampervansList = (res: OutdoorsyListResponse) => {
+        return res.data.map(
+            item => {                
+                const itemData = {
+                    imgPath: item.attributes.primary_image_url,
+                    title: item.attributes.name,
+                    city: item.attributes.location.city,
+                    state: item.attributes.location.state,
+                    price: item.attributes.price_per_day,
+                    rating: item.attributes.score,
+                    numOpinions: item.attributes.reviews_num
+                };
+                return (
+                    <CampervansItem
+                        key={item.id}  
+                        data={itemData} 
+                    />
+                );
+            }
+        )     
+    };
+
     useEffect(
         () => {
             updateResultsHandler();
@@ -44,12 +66,21 @@ const CampervansList = () => {
     }
 
     if (results) {
-        content = (
-            <>
-                <CampervansItem />
-                <CampervansItem />
-            </>
-        );   
+        
+        if (results.data.length) {
+            content = (
+                <>
+                    { buildCampervansList(results) }
+                </>
+            );
+        }
+        else {
+            content = (
+                <Col>
+                    No results found for your search
+                </Col>
+            );
+        }
     }
 
     return (
@@ -67,7 +98,7 @@ const CampervansList = () => {
                     { content }
                 </Row>
             </Container>
-            <div className="text-center">
+            <div className={classes.CampervansList__footer}>
                 <SquaredButton
                     clicked={() => {}}
                     type="button"

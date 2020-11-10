@@ -1,5 +1,5 @@
 .CampervansList {
-    margin: 4rem;
+    margin: 1rem;
 }
 
 .CampervansList__title {
@@ -10,4 +10,22 @@
 
 .CampervansList__body {
     padding: 0;
+    margin-bottom: 5.75rem;
+}
+
+.CampervansList__footer { 
+    text-align: center;
+    margin-bottom: 2.25rem;
+}
+
+@media (min-width: 48em) {
+
+    .CampervansList {
+        margin: 4rem;
+    }
+
+    .CampervansList__footer { 
+        text-align: center;
+        margin-bottom: 0;
+    }
 }

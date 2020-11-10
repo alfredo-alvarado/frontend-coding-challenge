@@ -16,7 +16,7 @@ const RatingBar = (props: Props) => {
         <ReactStars
             count={5}
             value={props.value}
-            size={16}
+            size={12}
             isHalf={true}
             color={starColor}
             activeColor={starColor}
