@@ -10,7 +10,7 @@ const getRentalList = ( searchTerms: string, page: number ):
     const pageLimit = 8;
     
     let endPoint = `${ outdoorsyUrl }?filter[type]=camper-van&address=san%20francisco`;
-    endPoint += `&filters[keywords]=${ encodeURI(searchTerms) }`;
+    endPoint += `&filter[keywords]=${ encodeURI(searchTerms) }`;
     endPoint += `&page[limit]=${ pageLimit }`;
     endPoint += `&page[offset]=${ pageLimit*(page - 1) }`;
 

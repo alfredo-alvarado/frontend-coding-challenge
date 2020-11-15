@@ -4,8 +4,8 @@ import SquaredButton from '../../Custom/SquaredButton';
 import classes from './SearchBar.module.css';
 
 interface Props {
-    formSubmitted: (event: FormEvent) => void,
-    inputChanged: (event: ChangeEvent) => void,
+    formSubmitted: (event: FormEvent<HTMLFormElement>) => void,
+    inputChanged: (event: ChangeEvent<HTMLInputElement>) => void,
     inputValue: string
 }
 

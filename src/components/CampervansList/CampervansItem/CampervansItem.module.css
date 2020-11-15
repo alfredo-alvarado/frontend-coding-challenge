@@ -1,7 +1,16 @@
 .CampervansItem__img {
+    max-height: 16.875rem !important;
+    max-width: 100%;    
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 4px 8px 0 rgba(0, 0, 0, 0.19);
+}
+
+.CampervansItem__img-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin-top: 2.625rem;
     margin-bottom: 2.625rem;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 4px 8px 0 rgba(0, 0, 0, 0.19);
+    height: 16.875rem
 }
 
 .CampervansItem__rating {
@@ -39,10 +48,17 @@
 
     .CampervansItem__info {
         padding-right: 2rem;
+        padding-top: 2.5rem;
     }
 
-    .CampervansItem__img {
-        margin: 0;
+    .CampervansItem__description { 
+        position: absolute;
+        margin-bottom: 2.5rem;
+        bottom: 0;
+    }
+
+    .CampervansItem__img-container {
+        margin: auto;
     }
 
     .CampervansItem__subtitle, .CampervansItem__title {

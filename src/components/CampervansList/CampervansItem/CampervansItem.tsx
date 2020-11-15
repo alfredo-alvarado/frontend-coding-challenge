@@ -53,8 +53,8 @@ const CampervansItem = (props: Props) => {
         <Col xs={12} md={6}>
             <div className={classes.CampervansItem}>
                 <Row>
-                    <Col xs={12} md={6}>
-                        <Image className={classes.CampervansItem__img} src={imgPath} rounded fluid />
+                    <Col className={classes['CampervansItem__img-container']} xs={12} md={6}>
+                        <Image className={classes.CampervansItem__img} src={imgPath} rounded />
                     </Col>
                     <Col xs={12} md={6}>
                         <div className={classes.CampervansItem__info}>

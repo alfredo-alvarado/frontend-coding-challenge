@@ -18,6 +18,13 @@
     margin-bottom: 2.25rem;
 }
 
+.CampervansList__no-results {
+    text-align: center;
+    margin-top: 2.5rem;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
 @media (min-width: 48em) {
 
     .CampervansList {
