@@ -1,10 +1,12 @@
 import React from 'react'
+import GenericError from '../GenericError';
 
 const NotFound = () => {
     return (
-        <div>
-            
-        </div>
+        <GenericError 
+            status={404}
+            message={'Page Not Found'}
+        />
     )
 }
 

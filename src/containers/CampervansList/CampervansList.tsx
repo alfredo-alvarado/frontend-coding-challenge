@@ -7,11 +7,13 @@ import SquaredButton from '../../components/Custom/SquaredButton';
 import CampervansItem from '../../components/CampervansList/CampervansItem';
 import classes from './CampervansList.module.css';
 import Loader from '../../components/Custom/Loader';
+import { Error } from '../../models/ErrorModel';
+import GenericError from '../../components/Errors/GenericError';
 
 const CampervansList = () => {
 
     const [results, setResults] = useState<null | OutdoorsyListResponse>(null);
-    const [error, setError] = useState<string>('');
+    const [error, setError] = useState<Error | null>(null);
     const [searchedText, setSearchedText] = useState<string>('');
     const [activatedSearch, setActivatedSearch] = useState<boolean>(true);
     const [enabledLoadMore, setEnabledLoadMore] = useState<boolean>(true);
@@ -72,10 +74,16 @@ const CampervansList = () => {
                 setResults(response);
                 return;
             }
-            setError('There was an error loading the data');
+            setError({
+                status: res.status,
+                message: res.statusText
+            });
         } 
         catch (error) {
-            setError('There was an unexpected error');
+            setError({
+                status: 503,
+                message: error
+            });
         }
     };
 
@@ -111,11 +119,7 @@ const CampervansList = () => {
     );
 
     if (error) {
-        return (
-            <div>
-                Error!
-            </div>
-        );
+        return <GenericError {...error} />;
     }
 
     if (results) {   

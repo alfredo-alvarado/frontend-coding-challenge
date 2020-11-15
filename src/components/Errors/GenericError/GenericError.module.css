@@ -1,0 +1,13 @@
+.GenericError {
+    text-align: center;
+    margin: 3rem;    
+}
+
+.GenericError__title {
+    font-size: 5rem;
+}
+
+.GenericError__message {
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+}
