@@ -1,7 +1,19 @@
+.CampervansItem__container:hover .CampervansItem,
+.CampervansItem__img {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 4px 8px 0 rgba(0, 0, 0, 0.19);
+}
+
+.CampervansItem {
+    padding: 0.5rem;
+}
+
+.CampervansItem__container:hover {
+    text-decoration: none !important;
+}
+
 .CampervansItem__img {
     max-height: 16.875rem !important;
-    max-width: 100%;    
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 4px 8px 0 rgba(0, 0, 0, 0.19);
+    max-width: 100%;
 }
 
 .CampervansItem__img-container {
@@ -44,11 +56,11 @@
     
     .CampervansItem {
         margin-top: 2.625rem;
+        margin-right: 2rem;
     }
 
     .CampervansItem__info {
-        padding-right: 2rem;
-        padding-top: 2.5rem;
+        padding-top: 2.5rem;        
     }
 
     .CampervansItem__description { 

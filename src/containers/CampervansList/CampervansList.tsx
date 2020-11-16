@@ -16,7 +16,7 @@ const CampervansList = () => {
     const [error, setError] = useState<Error | null>(null);
     const [searchedText, setSearchedText] = useState<string>('');
     const [activatedSearch, setActivatedSearch] = useState<boolean>(true);
-    const [enabledLoadMore, setEnabledLoadMore] = useState<boolean>(true);
+    const [enabledLoadMore, setEnabledLoadMore] = useState<boolean>(false);
     const [page, setPage] = useState(1);
 
     let content = <Loader />;
@@ -91,6 +91,7 @@ const CampervansList = () => {
         return res.data.map(
             item => {                
                 const itemData = {
+                    id: item.id,
                     imgPath: item.attributes.primary_image_url,
                     title: item.attributes.name,
                     city: item.attributes.location.city,
