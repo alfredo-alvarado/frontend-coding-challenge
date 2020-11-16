@@ -4,6 +4,7 @@
 }
 
 .CampervansItem {
+    margin-top: 2.625rem;
     padding: 0.5rem;
 }
 
@@ -19,8 +20,7 @@
 .CampervansItem__img-container {
     display: flex;
     justify-content: center;
-    align-items: center;
-    margin-top: 2.625rem;
+    align-items: center;    
     margin-bottom: 2.625rem;
     height: 16.875rem
 }
